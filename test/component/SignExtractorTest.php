@@ -2,6 +2,7 @@
 
 namespace Pherserk\SignExtractor\test\component;
 
+use Pherserk\SignExtractor\model\UnclassifiedSign;
 use Pherserk\SignExtractor\component\SignExtractor;
 
 class SignExtractorTest extends \PHPUnit_Framework_TestCase
@@ -9,11 +10,16 @@ class SignExtractorTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider provideText
      */
-    public function testExtract(string $text, bool $unique, array $expectedSigns)
+    public function testExtract(string $text, bool $unique, array $expectedChars)
     {
 	$signs = SignExtractor::extract($text, $unique);
 
-        static::assertSame($expectedSigns, $signs);
+        $expectedSigns = [];
+        foreach ($expectedChars as $expectedChar) {
+            $expectedSigns[] = new UnclassifiedSign($expectedChar);
+        }
+
+        static::assertEquals($expectedSigns, $signs);
     }	
 
     public function provideText()

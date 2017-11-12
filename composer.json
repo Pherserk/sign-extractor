@@ -2,7 +2,9 @@
     "name": "pherserk/sign-extractor",
     "require": {
         "php": ">=7.0",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+	
+        "pherserk/sign": "dev-master"
     },
     "require-dev": {
         "ext-xml": "*",
