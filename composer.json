@@ -1,0 +1,16 @@
+{
+    "name": "pherserk/sign-extractor",
+    "require": {
+        "php": ">=7.0",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "ext-xml": "*",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pherserk\\SignExtractor\\" : "src/"
+        }
+    }
+}
