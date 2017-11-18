@@ -1,5 +1,6 @@
 {
     "name": "pherserk/sign-extractor",
+    "license": "GPL-3.0",
     "require": {
         "php": ">=7.0",
         "ext-mbstring": "*",
